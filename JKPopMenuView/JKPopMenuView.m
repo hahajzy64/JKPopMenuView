@@ -47,18 +47,9 @@
         maskView.backgroundColor = [RGB_COLOR(210, 210, 210) colorWithAlphaComponent:0.6];
         maskView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self addSubview:maskView];
-        
-        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
-        [self addGestureRecognizer:tapGestureRecognizer];
-        
         [[UIApplication sharedApplication].keyWindow addSubview:self];
     }
     return self;
-}
-
-- (void)tapped:(UIGestureRecognizer *)gesture
-{
-    [self disappear];
 }
 
 - (void)setMenuItems:(NSArray *)menuItems
