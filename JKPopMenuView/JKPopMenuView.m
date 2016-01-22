@@ -1,13 +1,12 @@
 //
 //  JKPopMenuView.m
-//  
+//
 //
 //  Created by Bingjie on 14/12/15.
 //  Copyright (c) 2015年 Bingjie. All rights reserved.
 //
 
 #import "JKPopMenuView.h"
-#import <FXBlurView.h>
 
 #define kStringMenuItemAppearKey         @"kStringMenuItemAppearKey"
 #define kFloatMenuItemAppearDuration     (0.5f)
@@ -23,7 +22,6 @@
     CGFloat firstItemY;
     CGFloat endItemY;
 }
-@property (strong, nonatomic) FXBlurView *blurBGView;
 @end
 
 @implementation JKPopMenuView
@@ -45,22 +43,15 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.blurBGView = [[FXBlurView alloc] initWithFrame:self.bounds];
-        _blurBGView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        _blurBGView.dynamic = YES;
-        _blurBGView.blurRadius = 3;
-        [self addSubview:_blurBGView];
-        
-        UIView *maskView = [[UIView alloc] initWithFrame:_blurBGView.bounds];
+        UIView *maskView = [[UIView alloc] initWithFrame:self.bounds];
         maskView.backgroundColor = [RGB_COLOR(210, 210, 210) colorWithAlphaComponent:0.6];
         maskView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        [_blurBGView addSubview:maskView];
+        [self addSubview:maskView];
         
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
-        [_blurBGView addGestureRecognizer:tapGestureRecognizer];
-
+        [self addGestureRecognizer:tapGestureRecognizer];
         
-        _blurBGView.underlyingView = [UIApplication sharedApplication].keyWindow;
+        [[UIApplication sharedApplication].keyWindow addSubview:self];
     }
     return self;
 }
