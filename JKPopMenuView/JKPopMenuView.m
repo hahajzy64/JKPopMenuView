@@ -43,10 +43,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        UIView *maskView = [[UIView alloc] initWithFrame:self.bounds];
-        maskView.backgroundColor = [RGB_COLOR(210, 210, 210) colorWithAlphaComponent:0.6];
-        maskView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        [self addSubview:maskView];
         [[UIApplication sharedApplication].keyWindow addSubview:self];
     }
     return self;
