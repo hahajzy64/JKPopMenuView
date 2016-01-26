@@ -43,7 +43,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [[UIApplication sharedApplication].keyWindow addSubview:self];
+        //        [[UIApplication sharedApplication].keyWindow addSubview:self];
     }
     return self;
 }
@@ -57,7 +57,7 @@
 
 - (void)itemClick:(UIControl*)control
 {
-    [self disappear];
+    //    [self disappear];
     if ([self.delegate respondsToSelector:@selector(popMenuViewSelectIndex:)]) {
         [self.delegate popMenuViewSelectIndex:control.tag];
     }
@@ -68,7 +68,7 @@
 
 - (void)setupSubviews
 {
-    CGFloat y_Offset = 20;
+    CGFloat y_Offset = 30;
     CGFloat offset = 0;
     NSInteger count = self.menuItems.count;
     if (count == 2 || count == 4) {
@@ -201,8 +201,8 @@
 
 - (void)show
 {
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    [keyWindow addSubview:self];
+    //    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    //    [keyWindow addSubview:self];
     [self appear];
 }
 
