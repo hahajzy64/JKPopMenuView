@@ -25,6 +25,7 @@ typedef void (^JKPopMenuViewSelectBlock)(NSInteger index);
 + (instancetype)menuView;
 + (instancetype)menuViewWithItems:(NSArray*)items;
 - (void)show;
+- (void)disappear;
 
 @end
 
