@@ -162,7 +162,7 @@
     [UIView animateWithDuration:0.1 delay:0.6 options:UIViewAnimationOptionCurveEaseIn animations:^{
         self.alpha = 0.5;
     } completion:^(BOOL finished) {
-        [self removeFromSuperview];
+        //        [self removeFromSuperview];
     }];
 }
 
